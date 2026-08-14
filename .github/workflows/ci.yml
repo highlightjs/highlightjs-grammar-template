@@ -14,6 +14,8 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: npm test
+      - run: npm run build
+      - run: git diff --exit-code dist/example.es.js
 
   extra-build:
     runs-on: ubuntu-latest
@@ -29,4 +31,4 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: node tools/build.js -t cdn
-      - run: git -C extra/highlightjs-grammar-template diff --exit-code dist
+      - run: git -C extra/highlightjs-grammar-template diff --exit-code dist/example.min.js dist/example.es.min.js

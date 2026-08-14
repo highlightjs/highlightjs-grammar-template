@@ -31,11 +31,11 @@ Simply load the module after loading Highlight.js.  You'll use the minified vers
 
 ### With Node or another build system
 
-If you're using Node / Webpack / Rollup / Browserify, etc, simply require the grammar module, then register it with Highlight.js.
+If you're using Node / Webpack / Rollup / Browserify, etc, simply import the grammar module, then register it with Highlight.js.
 
 ```javascript
-var hljs = require('highlight.js');
-var hljsExample = require('highlightjs-grammar-template');
+import hljs from 'highlight.js';
+import hljsExample from 'highlightjs-grammar-template';
 
 hljs.registerLanguage("example", hljsExample);
 hljs.highlightAll();
@@ -67,6 +67,14 @@ node tools/build.js -t cdn
 Commit the generated `dist/` files.
 
 In this repo, `npm test` / `npm run test-markup` runs the same markup fixtures against `highlight.js/lib/core`.
+
+Self-contained ESM build (no highlight.js checkout):
+
+```bash
+npm run build
+```
+
+That writes `dist/example.es.js`. Commit it.
 
 ## License
 
