@@ -1,15 +1,15 @@
-'use strict';
-
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
-require('should');
-const hljs = require('highlight.js/lib/core');
-const example = require('../src/languages/example');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { globSync } from 'glob';
+import 'should';
+import hljs from 'highlight.js/lib/core';
+import example from '../dist/example.es.js';
 
 hljs.registerLanguage('example', example);
 
-const expects = glob.sync(path.join(__dirname, 'markup/example/*.expect.txt'));
+const here = path.dirname(fileURLToPath(import.meta.url));
+const expects = globSync(path.join(here, 'markup/example/*.expect.txt'));
 
 describe('example', () => {
   expects.forEach((filename) => {

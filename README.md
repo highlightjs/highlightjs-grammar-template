@@ -14,7 +14,7 @@ Simply load the module after loading Highlight.js.  You'll use the minified vers
 
 ```html
 <script type="text/javascript" src="/path/to/highlight.min.js"></script>
-<script type="text/javascript" src="/path/to/example.min.js"></script>
+<script type="text/javascript" src="/path/to/example.js"></script>
 <script type="text/javascript">
   hljs.highlightAll();
 </script>
@@ -31,11 +31,23 @@ Simply load the module after loading Highlight.js.  You'll use the minified vers
 
 ### With Node or another build system
 
-If you're using Node / Webpack / Rollup / Browserify, etc, simply require the grammar module, then register it with Highlight.js.
+If you're using Node / Webpack / Rollup / Browserify, etc, simply load the grammar module, then register it with Highlight.js.
+
+CommonJS (Highlight.js v11):
 
 ```javascript
 var hljs = require('highlight.js');
 var hljsExample = require('highlightjs-grammar-template');
+
+hljs.registerLanguage("example", hljsExample);
+hljs.highlightAll();
+```
+
+ESM:
+
+```javascript
+import hljs from 'highlight.js';
+import hljsExample from 'highlightjs-grammar-template';
 
 hljs.registerLanguage("example", hljsExample);
 hljs.highlightAll();
@@ -66,7 +78,15 @@ node tools/build.js -t cdn
 
 Commit the generated `dist/` files.
 
-In this repo, `npm test` / `npm run test-markup` runs the same markup fixtures against `highlight.js/lib/core`.
+In this repo, `npm test` / `npm run test-markup` installs highlight.js from npm, builds the ESM bundle, and runs markup fixtures against `dist/example.es.js`.
+
+Self-contained ESM build (no highlight.js checkout):
+
+```bash
+npm run build
+```
+
+That writes `dist/example.es.js`, `dist/example.cjs`, and the CDN build `dist/example.js` (`hljs.registerLanguage` at the bottom). Commit them.
 
 ## License
 

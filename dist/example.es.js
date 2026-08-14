@@ -1,10 +1,12 @@
+/*! `example` grammar built and tested with Highlight.js 11.12.0 */
+
 /*
 Grammar: Example
 Description: Replace this stub with your grammar.
 Category: misc
 */
 
-export default function(hljs) {
+function example(hljs) {
   return {
     name: 'Example',
     aliases: [ 'example' ],
@@ -20,4 +22,6 @@ export default function(hljs) {
       }
     ]
   };
-};
+}
+
+export { example as default };

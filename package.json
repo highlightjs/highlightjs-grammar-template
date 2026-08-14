@@ -2,15 +2,24 @@
   "name": "highlightjs-grammar-template",
   "version": "0.1.0",
   "description": "Starter template for third-party highlight.js grammars",
-  "type": "commonjs",
-  "main": "src/languages/example.js",
+  "type": "module",
+  "main": "dist/example.cjs",
+  "module": "dist/example.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/example.es.js",
+      "require": "./dist/example.cjs"
+    }
+  },
   "files": [
     "src",
     "dist"
   ],
   "scripts": {
+    "build": "rollup -c",
+    "pretest": "npm run build",
     "test": "mocha",
-    "test-markup": "mocha"
+    "test-markup": "npm test"
   },
   "repository": {
     "type": "git",
@@ -34,6 +43,7 @@
     "glob": "^11.0.0",
     "highlight.js": "^11.11.1",
     "mocha": "^11.2.2",
+    "rollup": "^4.0.2",
     "should": "^13.2.3"
   }
 }
