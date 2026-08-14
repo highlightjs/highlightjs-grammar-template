@@ -1,0 +1,5 @@
+# comment
+fn greet() {
+  let x = "hello"
+  let ok = true
+}

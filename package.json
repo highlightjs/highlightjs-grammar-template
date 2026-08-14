@@ -1,25 +1,39 @@
 {
-  "name": "highlightjs-robots-txt",
-  "version": "0.9.1",
-  "description": "highlight.js syntax definition for Google's robot.txt format",
-  "main": "src/robots-txt.js",
+  "name": "highlightjs-grammar-template",
+  "version": "0.1.0",
+  "description": "Starter template for third-party highlight.js grammars",
+  "type": "commonjs",
+  "main": "src/languages/example.js",
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "test-markup": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/highlightjs/highlightjs-robots-txt.git"
+    "url": "https://github.com/highlightjs/highlightjs-grammar-template.git"
   },
   "keywords": [
-    "robots.txt",
     "highlight.js",
     "highlightjs",
     "syntax"
   ],
-  "author": "Thomas LÉVEIL <thomasleveil@gmail.com>",
+  "author": "Josh Goebel <hello@joshgoebel.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/highlightjs/highlightjs-robots-txt/issues"
+    "url": "https://github.com/highlightjs/highlightjs-grammar-template/issues"
   },
-  "homepage": "https://github.com/highlightjs/highlightjs-robots-txt"
+  "homepage": "https://github.com/highlightjs/highlightjs-grammar-template",
+  "peerDependencies": {
+    "highlight.js": "^11.11.0"
+  },
+  "devDependencies": {
+    "glob": "^11.0.0",
+    "highlight.js": "^11.11.1",
+    "mocha": "^11.2.2",
+    "should": "^13.2.3"
+  }
 }
