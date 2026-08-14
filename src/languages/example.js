@@ -1,6 +1,6 @@
 /*
-Language: Example
-Description: Replace this stub with your language grammar.
+Grammar: Example
+Description: Replace this stub with your grammar.
 Category: misc
 */
 

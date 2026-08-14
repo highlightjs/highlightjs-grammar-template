@@ -1,8 +1,8 @@
-# [your language] - a language grammar for highlight.js
+# [your grammar] - a language grammar for highlight.js
 
-Starter repository for a third-party [highlight.js](https://highlightjs.org/) language grammar.
+Starter repository for a third-party [highlight.js](https://highlightjs.org/) grammar.
 
-Rename `example` (file, folder, `package.json` `name` / `main`, and `registerLanguage` id) to your language.
+Rename `example` (file, folder, `package.json` `name` / `main`, and `registerLanguage` id) to your grammar.
 
 ## Usage
 
@@ -10,7 +10,7 @@ Simply include the Highlight.js library in your webpage or Node app, then load t
 
 ### Static website or simple usage
 
-Simply load the module after loading Highlight.js.  You'll use the minified version found in the `dist` directory.  This module is just a CDN build of the language, so it will register itself as the Javascript is loaded.
+Simply load the module after loading Highlight.js.  You'll use the minified version found in the `dist` directory.  This module is just a CDN build of the grammar, so it will register itself as the Javascript is loaded.
 
 ```html
 <script type="text/javascript" src="/path/to/highlight.min.js"></script>
@@ -24,14 +24,14 @@ Simply load the module after loading Highlight.js.  You'll use the minified vers
 
 ```html
 <script type="text/javascript"
-  src="https://unpkg.com/highlightjs-your-language/dist/example.min.js"></script>
+  src="https://unpkg.com/highlightjs-your-grammar/dist/example.min.js"></script>
 ```
 
 - More info: <https://unpkg.com>
 
 ### With Node or another build system
 
-If you're using Node / Webpack / Rollup / Browserify, etc, simply require the language module, then register it with Highlight.js.
+If you're using Node / Webpack / Rollup / Browserify, etc, simply require the grammar module, then register it with Highlight.js.
 
 ```javascript
 var hljs = require('highlight.js');
