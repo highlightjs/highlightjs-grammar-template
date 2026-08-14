@@ -14,7 +14,9 @@ const expects = glob.sync(path.join(__dirname, 'markup/example/*.expect.txt'));
 describe('example', () => {
   expects.forEach((filename) => {
     const name = path.basename(filename, '.expect.txt');
-    it(`should markup ${name}`, () => {
+    const skipped = name.endsWith('.skip');
+    const run = skipped ? it.skip : it;
+    run(`should markup ${name}`, () => {
       const source = fs.readFileSync(filename.replace(/\.expect/, ''), 'utf8');
       const expected = fs.readFileSync(filename, 'utf8');
       hljs.highlight(source, { language: 'example' }).value.trim()
