@@ -64,7 +64,7 @@ CDN file (`dist/example.min.js`):
 node tools/build.js -t cdn
 ```
 
-Commit the generated `dist/` file.
+Commit the generated `dist/` files.
 
 In this repo, `npm test` / `npm run test-markup` runs the same markup fixtures against `highlight.js/lib/core`.
 
