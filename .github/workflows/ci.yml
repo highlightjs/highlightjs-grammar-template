@@ -15,7 +15,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
-      - run: git diff --exit-code dist/example.es.js
+      - run: git diff --exit-code dist/example.es.js dist/example.cjs dist/example.js
 
   extra-build:
     runs-on: ubuntu-latest

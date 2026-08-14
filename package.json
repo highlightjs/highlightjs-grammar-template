@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "description": "Starter template for third-party highlight.js grammars",
   "type": "module",
-  "main": "src/languages/example.js",
+  "main": "dist/example.cjs",
   "module": "dist/example.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/example.es.js",
+      "require": "./dist/example.cjs"
+    }
+  },
   "files": [
     "src",
     "dist"
