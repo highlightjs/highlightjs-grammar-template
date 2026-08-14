@@ -1,4 +1,4 @@
-# highlight.js grammar template
+# [your language] - a language grammar for highlight.js
 
 Starter repository for a third-party [highlight.js](https://highlightjs.org/) language grammar.
 
