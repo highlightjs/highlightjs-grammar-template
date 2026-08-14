@@ -78,7 +78,7 @@ node tools/build.js -t cdn
 
 Commit the generated `dist/` files.
 
-In this repo, `npm test` / `npm run test-markup` runs the same markup fixtures against `highlight.js/lib/core`.
+In this repo, `npm test` / `npm run test-markup` installs highlight.js from npm, builds the ESM bundle, and runs markup fixtures against `dist/example.es.js`.
 
 Self-contained ESM build (no highlight.js checkout):
 

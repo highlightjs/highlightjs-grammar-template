@@ -14,7 +14,6 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: npm test
-      - run: npm run build
       - run: git diff --exit-code dist/example.es.js dist/example.cjs dist/example.js
 
   extra-build:

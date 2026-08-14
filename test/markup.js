@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import { globSync } from 'glob';
 import 'should';
 import hljs from 'highlight.js/lib/core';
-import example from '../src/languages/example.js';
+import example from '../dist/example.es.js';
 
 hljs.registerLanguage('example', example);
 

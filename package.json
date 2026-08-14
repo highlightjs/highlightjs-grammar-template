@@ -17,8 +17,9 @@
   ],
   "scripts": {
     "build": "rollup -c",
+    "pretest": "npm run build",
     "test": "mocha",
-    "test-markup": "mocha"
+    "test-markup": "npm test"
   },
   "repository": {
     "type": "git",
