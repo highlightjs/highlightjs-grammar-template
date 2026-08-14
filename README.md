@@ -43,7 +43,7 @@ hljs.highlightAll();
 
 ## Develop
 
-Clone [highlight.js](https://github.com/highlightjs/highlight.js) and put this repo in `extra/`:
+Clone [highlight.js](https://github.com/highlightjs/highlight.js) and clone this repo into `extra/`:
 
 ```bash
 git clone https://github.com/highlightjs/highlight.js.git
