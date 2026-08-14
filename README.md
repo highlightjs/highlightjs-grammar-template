@@ -1,64 +1,67 @@
-# robots.txt - a language grammar for highlight.js
+# highlight.js grammar template
 
-![version](https://badgen.net/npm/v/highlightjs-robots-txt) ![license](https://badgen.net/badge/license/MIT/blue)
-![install size](https://badgen.net/packagephobia/install/highlightjs-robots-txt) ![minified size](https://badgen.net/bundlephobia/min/highlightjs-robots-txt)
+Starter repository for a third-party [highlight.js](https://highlightjs.org/) language grammar.
+
+Rename `example` (file, folder, `package.json` `name` / `main`, and `registerLanguage` id) to your language.
 
 ## Usage
 
-Simply include the Highlight.js library in your webpage or Node app, then load this module.
+Load highlight.js first, then this package.
 
-### Static website or simple usage
+### Browser (CDN build)
 
-Simply load the module after loading Highlight.js.  You'll use the minified version found in the `dist` directory.  This module is just a CDN build of the language, so it will register itself as the Javascript is loaded.
+The file in `dist/` is a CDN build. It registers itself when the script loads.
 
 ```html
-<script type="text/javascript" src="/path/to/highlight.min.js"></script>
-<script type="text/javascript" src="/path/to/robots-txt.min.js"></script>
-<script type="text/javascript">
+<script src="/path/to/highlight.min.js"></script>
+<script src="/path/to/example.min.js"></script>
+<script>
   hljs.highlightAll();
 </script>
 ```
 
-### Using directly from the UNPKG CDN
+UNPKG (after you publish):
 
 ```html
-<script type="text/javascript"
-  src="https://unpkg.com/highlightjs-robots-txt@0.9.1/dist/robots-txt.min.js"></script>
+<script src="https://unpkg.com/highlightjs-your-language/dist/example.min.js"></script>
 ```
 
-- More info: <https://unpkg.com>
+### Node / bundlers
 
-### With Node or another build system
+```js
+const hljs = require('highlight.js');
+const example = require('highlightjs-grammar-template');
 
-If you're using Node / Webpack / Rollup / Browserify, etc, simply require the language module, then register it with Highlight.js.
-
-```javascript
-var hljs = require('highlight.js');
-var hljsRobotsTxt = require('highlightjs-robots-txt');
-
-hljs.registerLanguage("robots-txt", hljsRobotsTxt);
-hljs.highlightAll();
+hljs.registerLanguage('example', example);
 ```
 
+## Develop
+
+Clone [highlight.js](https://github.com/highlightjs/highlight.js) and put this repo in `extra/`:
+
+```bash
+git clone https://github.com/highlightjs/highlight.js.git
+cd highlight.js
+git clone https://github.com/highlightjs/highlightjs-grammar-template.git extra/highlightjs-grammar-template
+npm install
+```
+
+Markup tests for extras:
+
+```bash
+ONLY_EXTRA=true npm run test-markup
+```
+
+CDN file (`dist/example.min.js`):
+
+```bash
+node tools/build.js -t cdn
+```
+
+Commit the generated `dist/` file.
+
+In this repo, `npm test` / `npm run test-markup` runs the same markup fixtures against `highlight.js/lib/core`.
 
 ## License
 
-Highlight.js is released under the MIT License. See [LICENSE][1] file
-for details.
-
-### Author
-
-Thomas LÉVEIL <thomasleveil@gmail.com>
-
-### Maintainer
-
-Josh Goebel <hello@joshgoebel.com>
-
-
-## Links
-
-- The official site for the Highlight.js library is <https://highlightjs.org/>.
-- The Highlight.js GitHub project: <https://github.com/highlightjs/highlight.js>
-- Learn more about robots.txt: <https://support.google.com/webmasters/answer/6062608?hl=en>
-
-[1]: https://github.com/highlightjs/highlightjs-robots-txt/blob/master/LICENSE
+MIT. See [LICENSE](LICENSE).
