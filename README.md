@@ -35,9 +35,9 @@ If you're using Node / Webpack / Rollup / Browserify, etc, simply require the la
 
 ```javascript
 var hljs = require('highlight.js');
-var example = require('highlightjs-grammar-template');
+var hljsExample = require('highlightjs-grammar-template');
 
-hljs.registerLanguage("example", example);
+hljs.registerLanguage("example", hljsExample);
 hljs.highlightAll();
 ```
 
