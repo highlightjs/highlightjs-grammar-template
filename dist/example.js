@@ -1,3 +1,5 @@
+/*! `example` grammar built and tested with Highlight.js 11.12.0 */
+
 var hljsExample = (function () {
   'use strict';
 

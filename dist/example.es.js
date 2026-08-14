@@ -1,3 +1,5 @@
+/*! `example` grammar built and tested with Highlight.js 11.12.0 */
+
 /*
 Grammar: Example
 Description: Replace this stub with your grammar.
