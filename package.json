@@ -1,6 +1,6 @@
 {
   "name": "highlightjs-grammar-template",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Starter template for third-party highlight.js language grammars",
   "type": "commonjs",
   "main": "src/languages/example.js",
